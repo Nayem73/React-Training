@@ -1,3 +1,5 @@
+import Fruit from "./Fruit";
+
 function Fruits() {
   const fruits = [
     {
@@ -22,7 +24,13 @@ function Fruits() {
       <ul>
         {fruits.map((fruit) => (
           <li key={fruit.name}>
-            {fruit.name} {fruit.color} {fruit.price}
+            {/* {fruit.name} {fruit.color} {fruit.price} */}
+            <Fruit
+              key={fruit.name}
+              name={fruit.name}
+              color={fruit.color}
+              price={fruit.price}
+            />
           </li>
         ))}
       </ul>
