@@ -1,8 +1,8 @@
 function Fruit({ name, price, color }) {
   return (
-    <div>
+    <li>
       {name} {color} {price}
-    </div>
+    </li>
   );
 }
 
