@@ -1,4 +1,5 @@
 import Count from "./components/Count";
+import Form from "./components/Form";
 import Fruits from "./components/Fruits";
 import Hello from "./components/Hello";
 
@@ -7,7 +8,8 @@ function App() {
     <div className="App">
       {/* <Hello /> */}
       {/* <Fruits /> */}
-      <Count />
+      {/* <Count /> */}
+      <Form />
     </div>
   );
 }
