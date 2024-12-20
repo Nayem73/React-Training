@@ -20,10 +20,11 @@ const Button = ({ buttonText }: ButtonProps) => {
     <>
 
       {alert &&
-        <div
-          className="alert alert-primary">Button was clicked!
+        <div className="alert alert-primary">
+          Button was clicked!
           <button onClick={handleClickClose}>x</button>
-        </div>}
+        </div>
+      }
       <button onClick={(event) => handleClick(event)} className="btn btn-primary">{buttonText}</button>
     </>
   )
