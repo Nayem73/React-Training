@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './Button.module.css';
 
 interface ButtonProps {
   buttonText: string;
@@ -20,12 +21,12 @@ const Button = ({ buttonText }: ButtonProps) => {
     <>
 
       {alert &&
-        <div className="alert alert-primary">
+        <div>
           Button was clicked!
-          <button onClick={handleClickClose}>x</button>
+          <button className="alert" onClick={handleClickClose}>x</button>
         </div>
       }
-      <button onClick={(event) => handleClick(event)} className="btn btn-primary">{buttonText}</button>
+      <button onClick={(event) => handleClick(event)} className="btn">{buttonText}</button>
     </>
   )
 }
