@@ -1,13 +1,15 @@
-import { FcLike } from "react-icons/fc";
+import { SlLike } from "react-icons/sl";
+import styles from "./Like.module.css";
 
 interface LikeProps {
   onClick: () => void;
+  isRed: boolean;
 }
 
-function Like({ onClick }: LikeProps) {
+function Like({ onClick, isRed }: LikeProps) {
   return (
-    <button onClick={onClick}>
-      <FcLike />
+    <button onClick={onClick} className={isRed ? styles.red : styles.white}>
+      <SlLike />
     </button>
   )
 }
