@@ -12,9 +12,18 @@ const Button = ({ buttonText }: ButtonProps) => {
     setAlert(true);
   }
 
+  const handleClickClose = () => {
+    setAlert(false);
+  }
+
   return (
     <>
-      {alert && <div className="alert alert-primary">Button was clicked!</div>}
+
+      {alert &&
+        <div
+          className="alert alert-primary">Button was clicked!
+          <button onClick={handleClickClose}>x</button>
+        </div>}
       <button onClick={(event) => handleClick(event)} className="btn btn-primary">{buttonText}</button>
     </>
   )
