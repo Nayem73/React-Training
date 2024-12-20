@@ -1,9 +1,11 @@
 import Button from "./components/Button"
 
+const buttonNumber = 1;
+
 function App() {
   return (
     <>
-      <Button />
+      <Button buttonText="Submit" buttonNumber={buttonNumber} />
     </>
   )
 }

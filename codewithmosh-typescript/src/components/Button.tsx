@@ -1,10 +1,18 @@
+interface ButtonProps {
+  buttonText: string;
+  buttonNumber: number;
+}
+
 const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
   event.preventDefault();
 }
 
-const Button = () => {
+const Button = ({ buttonText, buttonNumber }: ButtonProps) => {
   return (
-    <button onClick={(event) => handleClick(event)} className="btn btn-primary">Submit</button>
+    <>
+      <p>button number is {buttonNumber}</p>
+      <button onClick={(event) => handleClick(event)} className="btn btn-primary">{buttonText}</button>
+    </>
   )
 }
 
