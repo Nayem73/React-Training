@@ -9,7 +9,7 @@ interface LikeProps {
 function Like({ onClick, isRed }: LikeProps) {
   return (
     <div onClick={onClick} className={isRed ? styles.red : styles.white}>
-      <AiFillHeart />
+      <AiFillHeart size={40} />
     </div>
   )
 }
