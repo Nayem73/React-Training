@@ -1,7 +1,10 @@
+import ListComponent from "./components/ListComponent";
+
 function App() {
+
   return (
     <div>
-      Bismillahir Rahmanir Rahim
+      <ListComponent />
     </div>
   );
 }
