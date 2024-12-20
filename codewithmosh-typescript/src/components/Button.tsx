@@ -1,16 +1,20 @@
+import { useState } from "react";
+
 interface ButtonProps {
   buttonText: string;
-  buttonNumber: number;
 }
 
-const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-  event.preventDefault();
-}
+const Button = ({ buttonText }: ButtonProps) => {
+  const [alert, setAlert] = useState(false);
 
-const Button = ({ buttonText, buttonNumber }: ButtonProps) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    setAlert(true);
+  }
+
   return (
     <>
-      <p>button number is {buttonNumber}</p>
+      {alert && <div className="alert alert-primary">Button was clicked!</div>}
       <button onClick={(event) => handleClick(event)} className="btn btn-primary">{buttonText}</button>
     </>
   )

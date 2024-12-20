@@ -5,7 +5,7 @@ const buttonNumber = 1;
 function App() {
   return (
     <>
-      <Button buttonText="Submit" buttonNumber={buttonNumber} />
+      <Button buttonText="Submit" />
     </>
   )
 }
