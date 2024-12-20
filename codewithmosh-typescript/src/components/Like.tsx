@@ -1,4 +1,4 @@
-import { SlLike } from "react-icons/sl";
+import { AiFillHeart } from "react-icons/ai";
 import styles from "./Like.module.css";
 
 interface LikeProps {
@@ -8,9 +8,9 @@ interface LikeProps {
 
 function Like({ onClick, isRed }: LikeProps) {
   return (
-    <button onClick={onClick} className={isRed ? styles.red : styles.white}>
-      <SlLike />
-    </button>
+    <div onClick={onClick} className={isRed ? styles.red : styles.white}>
+      <AiFillHeart />
+    </div>
   )
 }
 
