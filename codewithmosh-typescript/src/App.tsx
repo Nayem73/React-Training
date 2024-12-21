@@ -3,6 +3,7 @@ import ExpenseTracker from "./components/ExpenseTracker"
 
 function App() {
   const [state, setState] = useState({
+    tmpDetails: { description: "", amount: "", category: "" },
     details: [
       { description: "", amount: "", category: "" }
     ]
@@ -11,8 +12,16 @@ function App() {
   return (
     <div>
       <ExpenseTracker
-        state={state}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => { console.log(e.target); setState({ ...state, details: [...state.details, { description: e.target.name, amount: e.target.name, category: e.target.name }] }) }}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          console.log(e.target);
+          setState({
+            ...state,
+            tmpDetails: {
+              ...state.tmpDetails,
+              [e.target.name]: e.target.value
+            }
+          })
+        }}
         onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault();
           setState(state);

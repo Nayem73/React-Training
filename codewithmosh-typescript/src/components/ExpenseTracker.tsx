@@ -1,18 +1,11 @@
 
 interface Props {
-  state: {
-    details: {
-      description: string
-      amount: string
-      category: string
-    }[]
-  }
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 
 }
 
-function ExpenseTracker({ state, onChange, onSubmit }: Props) {
+function ExpenseTracker({ onChange, onSubmit }: Props) {
 
   return (
     <form onSubmit={onSubmit}>
