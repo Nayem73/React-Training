@@ -3,6 +3,7 @@ import Button from "./components/Button"
 import Like from "./components/Like"
 import Game from "./components/Game";
 import ShoppingCart from "./components/ShoppingCart";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [isRed, setIsRed] = useState(true);
@@ -44,6 +45,7 @@ function App() {
         pizza={pizza}
       />
 
+      <Navbar totalItems={cart.items.length} />
       <ShoppingCart onClick={() => {
         console.log('Shopping cart button clicked');
         setCart({
@@ -54,6 +56,10 @@ function App() {
         })
       }}
         cart={cart}
+
+        onChange={(e) => {
+          setCart({ ...cart, items: [...cart.items, { id: 3, title: e.target.value, quantity: 1 }] })
+        }}
 
       />
     </>

@@ -1,5 +1,9 @@
-const Navbar = () => {
-  return <div>Navbar</div>;
+interface Props {
+  totalItems: number;
+}
+
+const Navbar = ({ totalItems }: Props) => {
+  return <div>Navbar - cartItems: {totalItems}</div>;
 };
 
 export default Navbar;
