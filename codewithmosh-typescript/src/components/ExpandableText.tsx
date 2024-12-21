@@ -5,7 +5,7 @@ interface Props {
   maxChars?: number;
 }
 
-function ExpandableText({ text, maxChars }: Props) {
+function ExpandableText({ text, maxChars = 20 }: Props) {
   const [isMore, SetIsMore] = useState(false);
 
   const handleClick = () => {
@@ -26,8 +26,9 @@ function ExpandableText({ text, maxChars }: Props) {
             )
             :
             <>
-              {text}...
-              <button onClick={handleClick}>Less</button>
+              {text}
+
+              {maxChars && text.length > maxChars ? <button onClick={handleClick}>...Less</button> : null}
             </>
         }
       </p>
