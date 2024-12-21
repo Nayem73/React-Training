@@ -11,6 +11,10 @@ function App() {
       name: 'John',
     }
   });
+  const [pizza, setPizza] = useState({
+    name: 'Spicy Pepperoni',
+    toppings: ['Mushroom']
+  })
 
   return (
     <>
@@ -25,8 +29,11 @@ function App() {
       <Game onClick={() => {
         console.log(`Game button clicked`);
         setGame({ ...game, player: { ...game.player, name: 'Not John' } })
+        console.log('Pizza toppings adding button is also clicked')
+        setPizza({ ...pizza, toppings: [...pizza.toppings, 'new topping'] })
       }}
         game={game}
+        pizza={pizza}
       />
     </>
   )

@@ -6,13 +6,22 @@ interface Props {
       name: string;
     }
   }
+  pizza: {
+    name: string;
+    toppings: string[];
+  }
 }
 
-function Game({ onClick, game }: Props) {
+function Game({ onClick, game, pizza }: Props) {
   return (
     <>
       <button onClick={onClick}>game button</button>
       <p>{game.player.name}</p>
+      <ul>
+        {pizza.toppings.map((topping, index) => (
+          <li key={index}>{topping}</li>
+        ))}
+      </ul>
     </>
   )
 }
