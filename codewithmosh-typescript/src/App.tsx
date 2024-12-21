@@ -24,7 +24,7 @@ function App() {
 
       <Game onClick={() => {
         console.log(`Game button clicked`);
-        setGame({ ...game, player: { name: 'Not John' } })
+        setGame({ ...game, player: { ...game.player, name: 'Not John' } })
       }}
         game={game}
       />
