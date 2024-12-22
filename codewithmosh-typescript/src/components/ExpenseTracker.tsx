@@ -1,25 +1,22 @@
+import { useForm } from "react-hook-form";
 
-interface Props {
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-
-}
-
-function ExpenseTracker({ onChange, onSubmit }: Props) {
+function ExpenseTracker() {
+  const { register, handleSubmit } = useForm();
+  console.log(register('description'));
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={handleSubmit((data) => console.log(data))}>
       <label>
         Description:
-        <input type="text" name="description" onChange={onChange} />
+        <input type="text" {...register('description')} />
       </label>
       <label>
         Amount:
-        <input type="number" name="amount" onChange={onChange} />
+        <input type="number" {...register('amount')} />
       </label>
       <label>
         Category:
-        <input type="text" name="category" onChange={onChange} />
+        <input type="text" {...register('category')} />
       </label>
       <button type="submit">Add</button>
     </form>
